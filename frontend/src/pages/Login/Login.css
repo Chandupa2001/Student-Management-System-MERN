@@ -97,7 +97,7 @@
   margin-bottom: 20px;
 }
 
-.sign-up-button {
+.signup-button {
   padding: 12px 30px;
   background-color: transparent;
   border: 1px solid white;
@@ -107,7 +107,7 @@
   font-size: 16px;
 }
 
-.sign-up-button:hover {
+.signup-button:hover {
   background-color: white;
   color: #ffa457;
 }
