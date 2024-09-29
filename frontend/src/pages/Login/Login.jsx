@@ -1,8 +1,12 @@
 import React from "react";
 import "./Login.css";
 import { logoNoBac } from "../../assets/assets";
+import { useNavigate } from "react-router-dom";
 
-const LoginPage = () => {
+const Login = () => {
+
+    const navigation = useNavigate();
+
     return (
         <div className="login">
             <div className="login-container">
@@ -10,8 +14,8 @@ const LoginPage = () => {
                     <h2>Sign In</h2>
                     <form>
                         <div className="input-group">
-                            <label>Username</label>
-                            <input type="text" placeholder="Username" />
+                            <label>Email</label>
+                            <input type="text" placeholder="Email" />
                         </div>
                         <div className="input-group">
                             <label>Password</label>
@@ -25,13 +29,13 @@ const LoginPage = () => {
 
                 <div className="login-welcome">
                     <img src={logoNoBac} />
-                    <h2>Welcome to login</h2>
+                    <h2>Welcome Back!</h2>
                     <p>Don’t have an account?</p>
-                    <button className="sign-up-button">Sign Up</button>
+                    <button className="signup-button" onClick={() => navigation("/signup") }>Sign Up</button>
                 </div>
             </div>
         </div>
     );
 };
 
-export default LoginPage;
+export default Login;
