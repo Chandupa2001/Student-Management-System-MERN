@@ -32,6 +32,7 @@ const SignUp = () => {
         setToken(response.data.token);
         localStorage.setItem("token", response.data.token);
         alert("Registered Successfully");
+        navigation('/dashboard/home');
       } else {
         alert(response.data.message);
       }
