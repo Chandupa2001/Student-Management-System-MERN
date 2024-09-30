@@ -50,6 +50,23 @@
   font-size: 14px;
 }
 
+.input-icon-wrapper {
+  position: relative;
+}
+
+.password-icon {
+  position: absolute;
+  right: 10px;  
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: gray;
+}
+
+.input-icon-wrapper input {
+  padding-right: 35px; 
+}
+
 .sign-in-button {
   width: 100%;
   padding: 12px;
