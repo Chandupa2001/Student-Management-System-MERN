@@ -6,6 +6,29 @@ import userModel from "../models/userModel.js";
 
 dotenv.config();
 
+//login user
+const loginUser = async (req,res) => {
+    const {email, password} = req.body;
+    try {
+        const user = await userModel.findOne({email});
+        if (!user) {
+            res.json({success: false, message: "Invalid email or password"}); 
+        }
+
+        const isMatch = await bycrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.json({success: false, message: "Invalid email or password"});
+        }
+
+        const token = createToken(user._id);
+        res.json({success: true, token});
+
+    } catch (error) {
+        console.error(error)
+        res.json({success: false, messaage: "Error"});
+    }
+}
+
 const createToken = (id) => {
     return jwt.sign({id}, process.env.JWT_SECRET)
 }
@@ -49,4 +72,4 @@ const registerUser = async (req,res) => {
     }
 }
 
-export { registerUser }
+export { registerUser, loginUser }
