@@ -31,6 +31,7 @@ const Login = () => {
             setToken(response.data.success);
             localStorage.setItem("token", response.data.token);
             console.log("Logged In");
+            navigation('/dashboard/home');
           } else {
             alert(response.data.message);
           }
