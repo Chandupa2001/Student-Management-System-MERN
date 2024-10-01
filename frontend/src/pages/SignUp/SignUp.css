@@ -35,8 +35,8 @@
 }
 
 .signup-welcome img {
-    height: 120px;
-    width: 120px;
+    height: 180px;
+    width: 180px;
     margin-bottom: 20px;
 }
 
@@ -91,20 +91,6 @@
     font-weight: 600;
     text-align: center;
     width: 100%;/
-}
-
-
-.social-icons {
-    display: flex;
-    justify-content: flex-start;
-    gap: 10px;
-    margin-bottom: 30px;
-}
-
-.social-icons i {
-    font-size: 18px;
-    color: #666;
-    cursor: pointer;
 }
 
 .input-group {
