@@ -72,4 +72,15 @@ const registerUser = async (req,res) => {
     }
 }
 
-export { registerUser, loginUser }
+// get user details
+const getUser = async (req,res) => {
+    try {
+        const userRef = await userModel.find({_id: req.body.userId});
+        res.json({success: true, name: userRef.map((item) => item.name)})
+    } catch (error) {
+        console.error(error);
+        res.json({success: false, message: "Error"});
+    }
+}
+
+export { registerUser, loginUser, getUser }
