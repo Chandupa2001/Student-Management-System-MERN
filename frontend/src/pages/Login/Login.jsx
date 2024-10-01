@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { logoNoBac } from "../../assets/assets";
+import { logoWhiteTranceparent } from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FaEyeSlash, FaRegEye } from "react-icons/fa";
@@ -89,7 +89,7 @@ const Login = () => {
         </div>
 
         <div className="login-welcome">
-          <img src={logoNoBac} />
+          <img src={logoWhiteTranceparent} />
           <h2>Welcome Back!</h2>
           <p>Don’t have an account?</p>
           <button

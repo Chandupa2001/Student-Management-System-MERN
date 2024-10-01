@@ -57,7 +57,7 @@ function Dashboard() {
       </div>
       <div className="main-content">
         <div className="header">
-          <h1>NextGen Academy</h1>
+          <h1>TuneCraft Music School</h1>
           <FaUserCircle className="header-logo" size={30} color="#ffa457" />
         </div>
         <div className="content">

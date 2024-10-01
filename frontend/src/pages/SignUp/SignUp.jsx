@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
-import { logoNoBac } from "../../assets/assets";
+import { logoWhiteTranceparent } from "../../assets/assets";
 import axios from "axios";
 import { FaEyeSlash, FaRegEye } from "react-icons/fa";
 
@@ -45,7 +45,7 @@ const SignUp = () => {
     <div className="signup">
       <div className="signup-container">
         <div className="signup-welcome">
-          <img src={logoNoBac} />
+          <img src={logoWhiteTranceparent} />
           <h2>Hello Friend!</h2>
           <p>Already have an account?</p>
           <button className="login-button" onClick={() => navigation("/")}>
