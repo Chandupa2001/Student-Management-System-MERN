@@ -2,9 +2,9 @@ import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import './Dashboard.css';
 import { logoNoBac } from "../../assets/assets.js";
-import { IoMdHome, IoIosAddCircle } from 'react-icons/io';
+import { IoMdHome } from 'react-icons/io';
 import { FaClipboardList, FaUserCircle } from 'react-icons/fa';
-import { PiListChecksFill } from 'react-icons/pi';
+import { PiListChecksFill, PiStudentFill } from 'react-icons/pi';
 import { AiFillNotification } from 'react-icons/ai';
 
 function Dashboard() {
@@ -24,9 +24,9 @@ function Dashboard() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="add" activeClassName="active-link">
-              <IoIosAddCircle className="icon" />
-              <span>Add</span>
+            <NavLink to="view-students" activeClassName="active-link">
+              <PiStudentFill className="icon" />
+              <span>Students</span>
             </NavLink>
           </li>
           <li>
