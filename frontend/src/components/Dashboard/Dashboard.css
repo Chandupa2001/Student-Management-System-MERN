@@ -2,23 +2,26 @@
     display: flex;
     height: 100vh;
     background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
 }
 
 .sidebar {
     width: 250px;
-    background-color: #ffa457;
+    background: linear-gradient(135deg, #ff7b39, #ffa457); 
     display: flex;
     flex-direction: column;
     padding: 15px;
     height: 100vh;
     transition: width 0.3s ease-in-out;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 .sidebar-header {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.941);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    padding-bottom: 20px;
 }
 
 .logoName {
@@ -29,7 +32,7 @@
 }
 
 .logoName img {
-    width: 120px;
+    width: 130px; 
     margin-bottom: 20px;
     transition: width 0.3s ease-in-out;
 }
@@ -39,14 +42,14 @@
     padding: 0;
     margin: 0;
     flex-grow: 1;
-    margin-top: 10px;
+    margin-top: 20px; 
 }
 
 .sidebar-menu li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
-    border-radius: 4px;
+    border-radius: 8px;
     transition: background-color 0.3s, padding 0.3s;
 }
 
@@ -55,25 +58,28 @@
     text-decoration: none; 
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 12px;
+    transition: all 0.3s ease; 
 }
 
 .sidebar-menu li a.active {
     background-color: white;
-    color: #ffa457;
+    color: #ff7b39;
     font-weight: bold;
     width: 100%;
+    border-left: 5px solid #ff7b39; 
 }
 
 .sidebar-menu li:hover a {
     background-color: #ffc89a;
     color: #ffffff;
+    padding-left: 20px; 
     width: 100%;
 }
 
 .sidebar-menu .icon {
-    margin-right: 10px;
-    font-size: 18px;
+    margin-right: 15px; 
+    font-size: 20px;
     transition: margin 0.3s, font-size 0.3s;
 }
 
@@ -89,28 +95,34 @@
     padding: 30px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     border-bottom: 1px solid #ffeddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .header h1 {
     margin: 0;
-    color: #ffa457;
+    color: #ff7b39; 
     font-size: 28px;
     font-weight: bold;
-    flex-grow: 1;
     text-align: center;
+    flex-grow: 1;
+}
+
+.header-logo {
+    cursor: pointer; 
+    transition: transform 0.2s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.1); 
 }
 
 .content {
     flex-grow: 1;
     padding: 20px;
     background-color: #ffffff;
-}
-
-.active-link {
-    background-color: #A2D68F;
-    color: #ffffff;
+    overflow-y: auto;
 }
 
 @media (max-width: 768px) {

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Students.css";
 import { FaRegEdit } from "react-icons/fa";
-import { MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
 function Items() {
+
   const navigate = useNavigate();
 
 
@@ -12,7 +12,7 @@ function Items() {
     <div>
       <div className="table-container">
         <div className="title-container">
-            <button>Add Student</button>
+            <button onClick={() => navigate('/dashboard/add')}>Add Student</button>
             <h2>List of Students</h2>
         </div>
         <table className="items-table">
