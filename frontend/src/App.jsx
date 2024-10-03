@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Home from "./pages/Home/Home";
 import Students from "./pages/Students/Students"
 import AddStudent from "./pages/AddStudent/AddStudent";
+import EditStudent from "./pages/EditStudent/EditStudent";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="home" element={<Home />} />
             <Route path="add-student" element={<AddStudent />} />
             <Route path="students" element={<Students />} />
+            <Route path="editStudent" element={<EditStudent />} />
           </Route>
         </Routes>
       </div>

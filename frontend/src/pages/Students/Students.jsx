@@ -29,6 +29,11 @@ function Items() {
     }
   };
 
+  const onEditPress = (id) => {
+    navigate("/dashboard/editStudent", { state: { studentId: id } });
+  };
+  
+
   return (
     <div>
       <div className="table-container">
@@ -58,7 +63,7 @@ function Items() {
               <td>{student.age}</td>
               <td>{student.telephoneNo}</td>
               <td>
-                <button>
+                <button onClick={() => onEditPress(student.studentId)}>
                   <FaRegEdit color="#6E726E" size={20} />
                 </button>
               </td>

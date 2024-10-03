@@ -1,0 +1,109 @@
+.edit {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f7f7f7; 
+    border-radius: 12px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 20px;
+  }
+  
+  .edit p {
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .edit input[type="text"],
+  .edit input[type="number"],
+  .edit textarea,
+  .edit select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  .edit input[type="text"]:focus,
+  .edit input[type="number"]:focus {
+    border-color: #ffa457; 
+    outline: none;
+  }
+  
+  .edit-age-tel {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .edit-age,
+  .edit-tel {
+    flex: 1;
+  }
+  
+  .edit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff7f50; 
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .edit-btn:hover {
+    background-color: #ff8f70;
+    transform: translateY(-2px);
+  }
+  
+  .edit-btn:active {
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 768px) {
+    .edit-age-tel {
+      flex-direction: column;
+    }
+  
+    .edit-btn {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .edit {
+      padding: 20px;
+    }
+  
+    .edit p {
+      font-size: 14px;
+    }
+  
+    .edit input[type="text"],
+    .edit input[type="number"],
+    .edit textarea,
+    .edit select {
+      font-size: 14px;
+    }
+  
+    .edit-btn {
+      padding: 12px;
+      font-size: 16px;
+    }
+  }
+  
