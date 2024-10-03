@@ -12,7 +12,7 @@ function Items() {
     <div>
       <div className="table-container">
         <div className="title-container">
-            <button onClick={() => navigate('/dashboard/add')}>Add Student</button>
+            <button onClick={() => navigate('/dashboard/add-student')}>Add Student</button>
             <h2>List of Students</h2>
         </div>
         <table className="items-table">

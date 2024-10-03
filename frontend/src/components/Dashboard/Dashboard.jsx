@@ -24,7 +24,7 @@ function Dashboard() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="view-students" activeClassName="active-link">
+            <NavLink to="students" activeClassName="active-link">
               <PiStudentFill className="icon" />
               <span>Students</span>
             </NavLink>
