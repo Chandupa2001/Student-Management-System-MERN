@@ -20,4 +20,14 @@ const addStudent = async (req,res) => {
     }
 }
 
-export { addStudent }
+const fetchStudents = async (req,res) => {
+    try {
+        const students = await studentModel.find({});
+        res.json({success: true, data: students})
+    } catch (error) {
+        console.error(error);
+        res.json({success: false, message: "Errorr"})
+    }
+}
+
+export { addStudent, fetchStudents }

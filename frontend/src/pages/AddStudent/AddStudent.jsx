@@ -15,7 +15,7 @@ function AddStudent() {
     telephoneNo: "",
   });
 
-  const handleSubmit = async (req, res) => {
+  const handleSubmit = async () => {
     event.preventDefault();
     const url = `http://localhost:3000/api/student/add`;
     try {
