@@ -4,7 +4,7 @@ import { FaRegEdit } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function Items() {
+function Student() {
   const navigate = useNavigate();
 
   const [students, setStudents] = useState([]);
@@ -76,4 +76,4 @@ function Items() {
   );
 }
 
-export default Items;
+export default Student;
