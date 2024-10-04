@@ -6,6 +6,7 @@ import { IoMdHome } from 'react-icons/io';
 import { FaClipboardList, FaUserCircle } from 'react-icons/fa';
 import { PiListChecksFill, PiStudentFill } from 'react-icons/pi';
 import { AiFillNotification } from 'react-icons/ai';
+import { GiTeacher } from "react-icons/gi";
 
 function Dashboard() {
   return (
@@ -30,9 +31,9 @@ function Dashboard() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="items" activeClassName="active-link">
-              <FaClipboardList className="icon" />
-              <span>Items</span>
+            <NavLink to="teachers" activeClassName="active-link">
+              <GiTeacher className="icon" />
+              <span>Teachers</span>
             </NavLink>
           </li>
           <li>
