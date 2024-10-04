@@ -18,4 +18,14 @@ const addTeacher = async (req,res) => {
     }
 }
 
-export { addTeacher }
+const fetchTeachers = async (req,res) => {
+    try {
+        const teacher = await teacherModel.find({});
+        res.json({success: true, data: teacher});
+    } catch (error) {
+        console.error(error);
+        res.json({success: false, message: "Error"})
+    }
+}
+
+export { addTeacher, fetchTeachers }
