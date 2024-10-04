@@ -8,6 +8,8 @@ import Students from "./pages/Students/Students"
 import AddStudent from "./pages/AddStudent/AddStudent";
 import EditStudent from "./pages/EditStudent/EditStudent";
 import Teachers from "./pages/Teachers/Teachers";
+import AddTeacher from "./pages/AddTeacher/AddTeacher";
+import EditTeacher from "./pages/EditTeacher/EditTeacher";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
             <Route path="students" element={<Students />} />
             <Route path="editStudent" element={<EditStudent />} />
             <Route path="teachers" element={<Teachers />} />
+            <Route path="add-teacher" element={<AddTeacher />} />
+            <Route path="editTeacher" element={<EditTeacher />} />
           </Route>
         </Routes>
       </div>
