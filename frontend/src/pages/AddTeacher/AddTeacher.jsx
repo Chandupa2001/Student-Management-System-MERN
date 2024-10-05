@@ -7,14 +7,46 @@ function AddTeacher() {
 
   const navigate = useNavigate();
 
+  const [data, setData] = useState({
+    teacherId: "",
+    name: "",
+    address: "",
+    instrument: "",
+    telephoneNo: ""
+  })
+
+  const handleSubmit = async () => {
+    event.preventDefault();
+    const url = "http://localhost:3000/api/teacher/add";
+    try {
+        const response = await axios.post(url,data);
+        if (response.data.success) {
+            navigate('/dashboard/teachers');
+            alert("Teacher added successfully");
+        } else {
+            alert(response.data.message)
+        }
+    } catch (error) {
+        console.error(error);
+    }
+  }
+
+  const onChangeHandler = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setData((data) => ({ ...data, [name]: value }));
+  };
+
   return (
     <div className="add">
       <h2 className="title">Add New Teacher</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="add-id">
           <p>StudentId No</p>
           <input
             type="text"
+            onChange={onChangeHandler}
+            value={data.teacherId}
             name="teacherId"
             placeholder="Enter Teacher Id No"
           />
@@ -23,6 +55,8 @@ function AddTeacher() {
           <p>Student Name</p>
           <input
             type="text"
+            onChange={onChangeHandler}
+            value={data.name}
             name="name"
             placeholder="Enter Teacher Name"
           />
@@ -31,6 +65,8 @@ function AddTeacher() {
           <p>Student Address</p>
           <input
             type="text"
+            onChange={onChangeHandler}
+            value={data.address}
             name="address"
             placeholder="Enter Teacher Address"
           />
@@ -40,6 +76,8 @@ function AddTeacher() {
             <p>Instrument</p>
             <input
               type="text"
+              onChange={onChangeHandler}
+                value={data.instrument}
               name="instrument"
               placeholder="Enter Teaching Instrument"
             />
@@ -48,6 +86,8 @@ function AddTeacher() {
             <p>Telephone No</p>
             <input
               type="text"
+              onChange={onChangeHandler}
+                value={data.telephoneNo}
               name="telephoneNo"
               placeholder="Enter Telephone No"
             />
