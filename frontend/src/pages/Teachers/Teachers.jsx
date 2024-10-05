@@ -8,9 +8,30 @@ function Teachers() {
 
   const navigate = useNavigate();
 
+  const [teachers, setTeachers] = useState([]);
+
+  useEffect(() => {
+    fetchTeachers();
+  }, [])
+  
+
   const onEditPress = () => {
     navigate("/dashboard/editTeacher");
   };
+
+  const fetchTeachers = async () => {
+    const url = "http://localhost:3000/api/teacher/get"
+    try {
+        const response = await axios.get(url);
+        if (response.data.success) {
+            setTeachers(response.data.data);
+        } else {
+            console.log(response.data.message);
+        }
+    } catch (error) {
+        console.error(error);
+    }
+  }
 
   return (
     <div>
@@ -33,18 +54,20 @@ function Teachers() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>tch10001</td>
-              <td>Pethum Sandaruwan</td>
-              <td>Pelmadulla</td>
-              <td>Guitar</td>
-              <td>0716060511</td>
+            {teachers.map((teacher) => (
+            <tr key={teacher.id}>
+              <td>{teacher.teacherId}</td>
+              <td>{teacher.name}</td>
+              <td>{teacher.address}</td>
+              <td>{teacher.instrument}</td>
+              <td>{teacher.telephoneNo}</td>
               <td>
                 <button onClick={onEditPress}>
                   <FaRegEdit color="#6E726E" size={20} />
                 </button>
               </td>
             </tr>
+            ))}
           </tbody>
         </table>
       </div>
