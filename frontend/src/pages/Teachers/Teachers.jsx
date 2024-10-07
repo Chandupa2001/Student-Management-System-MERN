@@ -15,8 +15,8 @@ function Teachers() {
   }, [])
   
 
-  const onEditPress = () => {
-    navigate("/dashboard/editTeacher");
+  const onEditPress = (id) => {
+    navigate("/dashboard/editTeacher", { state: { teacherId: id } });
   };
 
   const fetchTeachers = async () => {
@@ -62,7 +62,7 @@ function Teachers() {
               <td>{teacher.instrument}</td>
               <td>{teacher.telephoneNo}</td>
               <td>
-                <button onClick={onEditPress}>
+                <button onClick={() => onEditPress(teacher.teacherId)}>
                   <FaRegEdit color="#6E726E" size={20} />
                 </button>
               </td>
