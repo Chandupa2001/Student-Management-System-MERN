@@ -10,6 +10,7 @@ import EditStudent from "./pages/EditStudent/EditStudent";
 import Teachers from "./pages/Teachers/Teachers";
 import AddTeacher from "./pages/AddTeacher/AddTeacher";
 import EditTeacher from "./pages/EditTeacher/EditTeacher";
+import Batches from "./pages/Batches/Batches";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="teachers" element={<Teachers />} />
             <Route path="add-teacher" element={<AddTeacher />} />
             <Route path="editTeacher" element={<EditTeacher />} />
+            <Route path="batches" element={<Batches />} />
           </Route>
         </Routes>
       </div>
