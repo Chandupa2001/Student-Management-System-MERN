@@ -43,6 +43,16 @@ const viewTeacher = async (req, res) => {
         console.error(error);
         res.json({ success: false, message: "Error fetching teacher data" });
     }
-};
+}
 
-export { addTeacher, fetchTeachers, viewTeacher }
+const editTeacher = async (req,res) => {
+    try {
+        await teacherModel.findOneAndUpdate({teacherId: req.body.teacherId}, {name: req.body.name, address: req.body.address, instrument: req.body.instrument, telephoneNo: req.body.telephoneNo})
+        res.json({ success: true, message: "Teacher updated"})
+    } catch (error) {
+        console.error(error);
+        res.json({ success: false, message: "Error"});
+    }
+}
+
+export { addTeacher, fetchTeachers, viewTeacher, editTeacher }
