@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./Batches.css";
 import axios from "axios";
 import { FaRegEdit } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function Batches() {
+
+  const navigate = useNavigate();
 
   const [batches, setBatches] = useState([])
 
@@ -29,7 +32,7 @@ function Batches() {
     <div>
       <div className="table-container">
         <div className="title-container">
-          <button>
+          <button onClick={() => navigate('/dashboard/add-batch')}>
             Add Batch
           </button>
           <h2>List of Batches</h2>
