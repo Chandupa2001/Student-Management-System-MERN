@@ -1,0 +1,145 @@
+.add {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f7f7f7; 
+    border-radius: 12px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 20px;
+  }
+  
+  .add p {
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .add input[type="text"],
+  .add input[type="number"],
+  .add textarea,
+  .add select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  .add input[type="text"]:focus,
+  .add input[type="number"]:focus {
+    border-color: #ffa457; 
+    outline: none;
+  }
+  
+  .add-age-tel {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .add-age,
+  .add-tel {
+    flex: 1;
+  }
+
+  .add select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    appearance: none;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%23666' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+  }
+  
+  .add select:focus {
+    border-color: #ffa457;
+    box-shadow: 0 0 5px rgba(255, 164, 87, 0.5);
+    outline: none;
+  }
+  
+  .add select:hover {
+    border-color: #ffa457;
+  }
+  
+  .add select option {
+    padding: 10px;
+  }
+  
+  .add select:disabled {
+    background-color: #f0f0f0;
+    color: #666;
+  }  
+  
+  .add-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff7f50; 
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .add-btn:hover {
+    background-color: #ff8f70;
+    transform: translateY(-2px);
+  }
+  
+  .add-btn:active {
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 768px) {
+    .add-age-tel {
+      flex-direction: column;
+    }
+  
+    .add-btn {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .add {
+      padding: 20px;
+    }
+  
+    .add p {
+      font-size: 14px;
+    }
+  
+    .add input[type="text"],
+    .add input[type="number"],
+    .add textarea,
+    .add select {
+      font-size: 14px;
+    }
+  
+    .add-btn {
+      padding: 12px;
+      font-size: 16px;
+    }
+  }
+  

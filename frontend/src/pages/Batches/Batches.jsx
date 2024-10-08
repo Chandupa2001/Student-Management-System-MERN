@@ -1,12 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Batches.css";
+import axios from "axios";
+import { FaRegEdit } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function Batches() {
+
+  const navigate = useNavigate();
+
+  const [batches, setBatches] = useState([])
+
+  useEffect(() => {
+    fetchBatches();
+  }, [])
+  
+  const fetchBatches = async () => {
+    const url = "http://localhost:3000/api/batch/get"
+    try {
+        const response = await axios.get(url);
+        if (response.data.success) {
+            setBatches(response.data.data);
+        } else {
+            console.log(response.data.message);
+        }
+    } catch (error) {
+        console.error(error);
+    }
+  }
+
   return (
     <div>
       <div className="table-container">
         <div className="title-container">
-          <button>
+          <button onClick={() => navigate('/dashboard/add-batch')}>
             Add Batch
           </button>
           <h2>List of Batches</h2>
@@ -22,17 +48,19 @@ function Batches() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>btch10001</td>
-              <td>Chandupa Ranawaka</td>
-              <td>Tabla</td>
-              <td>YMBA Matara</td>
+            {batches.map((batch) => (
+            <tr key={batch.id}>
+              <td>{batch.batchId}</td>
+              <td>{batch.teacherName}</td>
+              <td>{batch.instrument}</td>
+              <td>{batch.venue}</td>
               <td>
                 <button>
-                  View Batch
+                <FaRegEdit color="#6E726E" size={20} />
                 </button>
               </td>
             </tr>
+            ))}
           </tbody>
         </table>
       </div>
