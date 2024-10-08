@@ -12,6 +12,7 @@ import AddTeacher from "./pages/AddTeacher/AddTeacher";
 import EditTeacher from "./pages/EditTeacher/EditTeacher";
 import Batches from "./pages/Batches/Batches";
 import AddBatch from "./pages/AddBatch/AddBatch";
+import EditBatch from "./pages/EditBatch/EditBatch";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="editTeacher" element={<EditTeacher />} />
             <Route path="batches" element={<Batches />} />
             <Route path="add-batch" element={<AddBatch />} />
+            <Route path="editBatch" element={<EditBatch />} />
           </Route>
         </Routes>
       </div>
