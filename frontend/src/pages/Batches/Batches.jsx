@@ -28,6 +28,10 @@ function Batches() {
     }
   }
 
+  const onEditPress = (id) => {
+    navigate("/dashboard/editBatch", { state: { batchId: id } });
+  };
+
   return (
     <div>
       <div className="table-container">
@@ -55,7 +59,7 @@ function Batches() {
               <td>{batch.instrument}</td>
               <td>{batch.venue}</td>
               <td>
-                <button>
+                <button onClick={() => onEditPress(batch.batchId)}>
                 <FaRegEdit color="#6E726E" size={20} />
                 </button>
               </td>
