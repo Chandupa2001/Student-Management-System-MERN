@@ -24,7 +24,6 @@ function EditBatch() {
 
     useEffect(() => {
         if (data.teacherName) {
-            // Set the available instruments based on the fetched teacher
             const selectedTeacher = teachers.find(
                 (teacher) => teacher.name === data.teacherName
             );
@@ -95,7 +94,6 @@ function EditBatch() {
             setAvailableInstruments(
                 selectedTeacher ? [selectedTeacher.instrument] : []
             );
-            // Clear the selected instrument if the teacher changes
             setData((prevData) => ({ ...prevData, instrument: "" }));
         }
     };
