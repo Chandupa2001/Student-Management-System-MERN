@@ -8,6 +8,7 @@ import { PiListChecksFill, PiStudentFill } from 'react-icons/pi';
 import { AiFillNotification } from 'react-icons/ai';
 import { GiTeacher } from "react-icons/gi";
 import { SiGoogleclassroom } from "react-icons/si";
+import { BiListPlus } from "react-icons/bi";
 
 function Dashboard() {
   return (
@@ -44,9 +45,9 @@ function Dashboard() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="deals" activeClassName="active-link">
-              <AiFillNotification className="icon" />
-              <span>Add Deals</span>
+            <NavLink to="enroll" activeClassName="active-link">
+              <BiListPlus className="icon" />
+              <span>Enroll</span>
             </NavLink>
           </li>
           <li>
