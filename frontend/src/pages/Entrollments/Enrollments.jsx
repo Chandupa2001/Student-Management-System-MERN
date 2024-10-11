@@ -3,6 +3,7 @@ import "./Enrollments.css";
 import { FaRegEdit } from "react-icons/fa";
 
 function Enrollments() {
+  // Create functions
   return (
     <div>
       <div className="table-container">
