@@ -45,7 +45,7 @@ function Dashboard() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="enroll" activeClassName="active-link">
+            <NavLink to="enrollments" activeClassName="active-link">
               <BiListPlus className="icon" />
               <span>Enroll</span>
             </NavLink>
