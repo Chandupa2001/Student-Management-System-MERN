@@ -1,22 +1,25 @@
 import React from "react";
 import "./Enrollments.css";
 import { FaRegEdit } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function Enrollments() {
-  // Create functions
+
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className="table-container">
         <div className="title-container">
-          <button>
-            Add Entrollment
+        <button onClick={() => navigate('/dashboard/enroll')}>
+            Enroll Student
           </button>
           <h2>List of Enrollments</h2>
         </div>
         <table className="items-table">
           <thead>
             <tr>
-              <th>Entrollment Id</th>
+              <th>Enrollment Id</th>
               <th>Batch Id</th>
               <th>Student Name</th>
               <th>Joined Date</th>
