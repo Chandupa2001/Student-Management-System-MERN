@@ -5,6 +5,7 @@ import userRouter from "./routes/userRouter.js";
 import studentRouter from "./routes/studentRouter.js";
 import teacherRouter from "./routes/teacherRouter.js";
 import batchRouter from "./routes/batchRouter.js";
+import enrollRouter from "./routes/enrollRouter.js";
 
 //app config
 const app = express();
@@ -22,6 +23,7 @@ app.use("/api/user", userRouter)
 app.use("/api/student", studentRouter)
 app.use("/api/teacher", teacherRouter)
 app.use("/api/batch", batchRouter)
+app.use("/api/enroll", enrollRouter)
 
 app.listen(port, () => {
     console.log(`Server Started on http://localhost:${port}`)
