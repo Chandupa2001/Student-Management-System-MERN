@@ -17,4 +17,14 @@ const enrollStudent = async (req,res) => {
     }
 }
 
-export { enrollStudent }
+const fetchEnrollments = async (req,res) => {
+    try {
+        const enrollments = await enrollModel.find({});
+        res.json({success: true, data: enrollments})
+    } catch (error) {
+        console.error(error);
+        res.json({success: false, message: "Errorr"})
+    }
+}
+
+export { enrollStudent, fetchEnrollments }
