@@ -1,11 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Enrollments.css";
 import { FaRegEdit } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Enrollments() {
 
   const navigate = useNavigate();
+
+  const [enrollments, setEnrollments] = useState([])
+
+  useEffect(() => {
+    fetchEnrollments();
+  }, [])
+  
+  const fetchEnrollments = async () => {
+    const url = "http://localhost:3000/api/enroll/get"
+    try {
+        const response = await axios.get(url);
+        if (response.data.success) {
+            setEnrollments(response.data.data);
+        } else {
+            console.log(response.data.message);
+        }
+    } catch (error) {
+        console.error(error);
+    }
+  }
 
   return (
     <div>
@@ -27,17 +48,19 @@ function Enrollments() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>enr10001</td>
-              <td>btch10001</td>
-              <td>Chandupa Ranawaka</td>
-              <td>2024/10/10</td>
+            {enrollments.map((enrollment) => (
+            <tr key={enrollment.id}>
+              <td>{enrollment.enrollmentId}</td>
+              <td>{enrollment.batchId}</td>
+              <td>{enrollment.studentName}</td>
+              <td>{enrollment.joinedDate}</td>
               <td>
                 <button>
                   <FaRegEdit color="#6E726E" size={20} />
                 </button>
               </td>
             </tr>
+            ))}
           </tbody>
         </table>
       </div>
