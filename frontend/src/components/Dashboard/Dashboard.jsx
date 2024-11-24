@@ -50,12 +50,6 @@ function Dashboard() {
               <span>Enroll</span>
             </NavLink>
           </li>
-          <li>
-            <NavLink to="view" activeClassName="active-link">
-              <AiFillNotification className="icon" />
-              <span>View Deals</span>
-            </NavLink>
-          </li>
         </ul>
       </div>
       <div className="main-content">
