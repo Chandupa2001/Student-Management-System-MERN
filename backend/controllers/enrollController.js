@@ -27,4 +27,22 @@ const fetchEnrollments = async (req,res) => {
     }
 }
 
-export { enrollStudent, fetchEnrollments }
+const viewEnrollment = async (req, res) => {
+    const { enrollmentId } = req.body;
+    
+    try {
+        const student = await enrollModel.find({ enrollmentId });
+        
+        if (student.length > 0) {
+            res.json({ success: true, data: student });
+        } else {
+            res.json({ success: false, message: "No enrollment found with this ID" });
+        }
+    } catch (error) {
+        console.error(error);
+        res.json({ success: false, message: "Error fetching enrollment data" });
+    }
+};
+
+
+export { enrollStudent, fetchEnrollments, viewEnrollment }
