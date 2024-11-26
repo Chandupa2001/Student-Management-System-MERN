@@ -31,10 +31,10 @@ const viewEnrollment = async (req, res) => {
     const { enrollmentId } = req.body;
     
     try {
-        const student = await enrollModel.find({ enrollmentId });
+        const enrollment = await enrollModel.find({ enrollmentId });
         
-        if (student.length > 0) {
-            res.json({ success: true, data: student });
+        if (enrollment.length > 0) {
+            res.json({ success: true, data: enrollment });
         } else {
             res.json({ success: false, message: "No enrollment found with this ID" });
         }
