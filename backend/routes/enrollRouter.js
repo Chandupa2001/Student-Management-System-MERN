@@ -5,6 +5,6 @@ const enrollRouter = express.Router();
 
 enrollRouter.post("/enrollStudent", enrollStudent)
 enrollRouter.get("/get", fetchEnrollments)
-studentRouter.post("/view", viewEnrollment)
+enrollRouter.post("/view", viewEnrollment)
 
 export default enrollRouter
