@@ -4,7 +4,7 @@ const enrollStudent = async (req,res) => {
     const enroll = new enrollModel({
         enrollmentId: req.body.enrollmentId,
         batchId: req.body.batchId,
-        studentName: req.body.studentName,
+        studentId: req.body.studentId,
         joinedDate: req.body.joinedDate
     });
 
