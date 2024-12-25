@@ -42,7 +42,7 @@ function Enrollments() {
             <tr>
               <th>Enrollment Id</th>
               <th>Batch Id</th>
-              <th>Student Name</th>
+              <th>Student Id</th>
               <th>Joined Date</th>
               <th>Edit</th>
             </tr>
@@ -52,7 +52,7 @@ function Enrollments() {
             <tr key={enrollment.id}>
               <td>{enrollment.enrollmentId}</td>
               <td>{enrollment.batchId}</td>
-              <td>{enrollment.studentName}</td>
+              <td>{enrollment.studentId}</td>
               <td>{enrollment.joinedDate}</td>
               <td>
                 <button>
