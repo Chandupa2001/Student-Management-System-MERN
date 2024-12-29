@@ -15,6 +15,7 @@ import AddBatch from "./pages/AddBatch/AddBatch";
 import EditBatch from "./pages/EditBatch/EditBatch";
 import Enrollments from "./pages/Enrollments/Enrollments";
 import Enroll from "./pages/Enroll/Enroll";
+import EditEnrollment from "./pages/EditEnrollment/EditEnrollment";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="editBatch" element={<EditBatch />} />
             <Route path="enrollments" element={<Enrollments />} />
             <Route path="enroll" element={<Enroll />} />
+            <Route path="editEnrollment" element={<EditEnrollment />} />
           </Route>
         </Routes>
       </div>
