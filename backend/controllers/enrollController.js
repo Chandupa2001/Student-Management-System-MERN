@@ -44,5 +44,14 @@ const viewEnrollment = async (req, res) => {
     }
 };
 
+const editEnrollment = async (req,res) => {
+    try {
+        await enrollModel.findOneAndUpdate({enrollmentId: req.body.enrollmentId}, {batchId: req.body.batchId, studentId: req.body.studentId, joinedDate: req.body.joinedDate})
+        res.json({ success: true, message: "Enrollment updated"})
+    } catch (error) {
+        console.error(error);
+        res.json({ success: false, message: "Error"});
+    }
+}
 
-export { enrollStudent, fetchEnrollments, viewEnrollment }
+export { enrollStudent, fetchEnrollments, viewEnrollment, editEnrollment }
