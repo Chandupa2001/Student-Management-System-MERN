@@ -4,8 +4,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function EditEnrollment() {
+  const location = useLocation();
+  const { enrollmentId } = location.state;
   const navigate = useNavigate();
-  
+
   const [data, setData] = useState({
     enrollmentId: "",
     batchId: "",
@@ -19,6 +21,26 @@ function EditEnrollment() {
     getBatches();
     getStudents();
   }, []);
+
+  const fetchEnrollment = async () => {
+    const url = "http://localhost:3000/api/enroll/get";
+    try {
+      const response = await axios.post(url, { enrollmentId });
+      if (response.data.success) {
+        const enrollmentData = response.data.data[0];
+        setData({
+          enrollmentId: enrollmentData.enrollmentId,
+          batchId: enrollmentData.batchId,
+          studentId: enrollmentData.studentId,
+          joinedDate: enrollmentData.joinedDate,
+        });
+      } else {
+        console.error("Error fetching batch data");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const getBatches = async () => {
     const url = "http://localhost:3000/api/batch/get";
@@ -50,7 +72,7 @@ function EditEnrollment() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(data)
+    console.log(data);
     const url = "http://localhost:3000/api/enroll/enrollStudent";
     try {
       const response = await axios.post(url, data);
@@ -80,6 +102,7 @@ function EditEnrollment() {
             type="text"
             name="enrollmentId"
             onChange={onChangeHandler}
+            value={data.enrollmentId}
             placeholder="Enter Enroll Id No"
           />
         </div>
@@ -123,9 +146,12 @@ function EditEnrollment() {
           </div>
           <div className="add-tel">
             <p>Date</p>
-            <input type="date" name="joinedDate"
-            onChange={onChangeHandler}
-            placeholder="Enter Date" />
+            <input
+              type="date"
+              name="joinedDate"
+              onChange={onChangeHandler}
+              placeholder="Enter Date"
+            />
           </div>
         </div>
         <button type="submit" className="add-btn">
