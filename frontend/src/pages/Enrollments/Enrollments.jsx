@@ -28,6 +28,10 @@ function Enrollments() {
     }
   }
 
+  const onEditPress = (id) => {
+    navigate("/dashboard/editEnrollment", { state: { enrollmentId: id } });
+  };
+
   return (
     <div>
       <div className="table-container">
@@ -55,7 +59,7 @@ function Enrollments() {
               <td>{enrollment.studentId}</td>
               <td>{enrollment.joinedDate}</td>
               <td>
-                <button>
+                <button onClick={() => onEditPress(enrollment.enrollmentId)}>
                   <FaRegEdit color="#6E726E" size={20} />
                 </button>
               </td>
