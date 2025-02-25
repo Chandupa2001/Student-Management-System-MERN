@@ -40,7 +40,7 @@ function AddBatch() {
       const response = await axios.post(url, data);
       if (response.data.success) {
         navigate("/dashboard/batches");
-        alert("Batch added successfully");
+        alert("Batch added successfully!");
       } else {
         alert(response.data.message);
       }
